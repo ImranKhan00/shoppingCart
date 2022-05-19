@@ -46,6 +46,7 @@ namespace cmsShoppingCart.Areas.Admin.Controllers
 
 		//POST admin/pages/create
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public async Task<ActionResult> Create(Page page)
 		{
 			if(ModelState.IsValid)
@@ -56,15 +57,71 @@ namespace cmsShoppingCart.Areas.Admin.Controllers
 				var slug = context.Pages.FirstOrDefault(x => x.Slug == page.Slug);
 				if(slug != null)
 				{
-					ModelState.AddModelError("", "The title is already exists.");
+					ModelState.AddModelError("", "The page is already exists.");
 					return View(page);
 				}
 				context.Add(page);
 				await context.SaveChangesAsync();
 
+				TempData["Success"] = "The page has been added!";
+
 				return RedirectToAction("Index");
 			}
 			return View(page);
+		}
+
+		//GET admin/pages/edit/5
+		public async Task<ActionResult> Edit(int id)
+		{
+			Page page = await context.Pages.FindAsync(id);
+			if (page == null)
+			{
+				return NotFound();
+			}
+			return View(page);
+		}
+
+		//POST admin/pages/Edit
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<ActionResult> Edit(Page page)
+		{
+			if (ModelState.IsValid)
+			{
+				page.Slug = page.Id == 1 ? "home" : page.Title.ToLower().Replace(" ", "-");
+				
+				var slug = context.Pages.Where(x=>x.Id != page.Id).FirstOrDefault(x => x.Slug == page.Slug);
+				if (slug != null)
+				{
+					ModelState.AddModelError("", "The page is already exists.");
+					return View(page);
+				}
+				context.Update(page);
+				await context.SaveChangesAsync();
+
+				TempData["Success"] = "The page has been Edited!";
+
+				return RedirectToAction("Edit",new { id = page.Id});
+			}
+			return View(page);
+		}
+
+		//GET admin/pages/delete/5
+		public async Task<ActionResult> Delete(int id)
+		{
+			Page page = await context.Pages.FindAsync(id);
+			if (page == null)
+			{
+				TempData["Error"] = "The page does not exist!";
+			}
+			else
+			{
+				context.Pages.Remove(page);
+				await context.SaveChangesAsync();
+
+				TempData["Success"] = "The page has been deleted!";
+			}
+			return RedirectToAction("Index");
 		}
 	}
 }

@@ -1,4 +1,3 @@
-C:\Users\636\source\repos\cmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\cmsShoppingCart.csproj.AssemblyReference.cache
 C:\Users\636\source\repos\cmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\cmsShoppingCart.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\636\source\repos\cmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\cmsShoppingCart.AssemblyInfoInputs.cache
 C:\Users\636\source\repos\cmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\cmsShoppingCart.AssemblyInfo.cs
@@ -155,3 +154,5 @@ C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor
 C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Pages\Details.cshtml.g.cs
 C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Pages\Create.cshtml.g.cs
+C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_NotificationPartial.cshtml.g.cs
+C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Pages\Edit.cshtml.g.cs
