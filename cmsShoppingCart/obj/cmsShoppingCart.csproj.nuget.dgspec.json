@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\636\\source\\repos\\cmsShoppingCart\\cmsShoppingCart\\cmsShoppingCart.csproj": {}
+    "C:\\Users\\636\\source\\repos\\CmsShoppingCart\\cmsShoppingCart\\cmsShoppingCart.csproj": {}
   },
   "projects": {
-    "C:\\Users\\636\\source\\repos\\cmsShoppingCart\\cmsShoppingCart\\cmsShoppingCart.csproj": {
+    "C:\\Users\\636\\source\\repos\\CmsShoppingCart\\cmsShoppingCart\\cmsShoppingCart.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\636\\source\\repos\\cmsShoppingCart\\cmsShoppingCart\\cmsShoppingCart.csproj",
+        "projectUniqueName": "C:\\Users\\636\\source\\repos\\CmsShoppingCart\\cmsShoppingCart\\cmsShoppingCart.csproj",
         "projectName": "cmsShoppingCart",
-        "projectPath": "C:\\Users\\636\\source\\repos\\cmsShoppingCart\\cmsShoppingCart\\cmsShoppingCart.csproj",
+        "projectPath": "C:\\Users\\636\\source\\repos\\CmsShoppingCart\\cmsShoppingCart\\cmsShoppingCart.csproj",
         "packagesPath": "C:\\Users\\636\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\636\\source\\repos\\cmsShoppingCart\\cmsShoppingCart\\obj\\",
+        "outputPath": "C:\\Users\\636\\source\\repos\\CmsShoppingCart\\cmsShoppingCart\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\636\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,6 +53,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             }
           },
           "imports": [

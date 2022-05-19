@@ -11,6 +11,6 @@ namespace cmsShoppingCart.Infrastructure
 
 		}
 
-		public DbSet<Pages> Pages { get; set; }
+		public DbSet<Page> Pages { get; set; }
 	}
 }

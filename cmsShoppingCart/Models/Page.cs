@@ -2,7 +2,7 @@
 
 namespace cmsShoppingCart.Models
 {
-	public class Pages
+	public class Page
 	{
 		public int Id { get; set; }
 		[Required]
