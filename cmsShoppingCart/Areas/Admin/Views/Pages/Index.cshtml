@@ -3,15 +3,18 @@
 @{
 	ViewData["Title"] = "Index";
 }
+<script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+</script>
 
 <h1>Index</h1>
 
 <p>
 	<a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table sorting" id="pages">
 	<thead>
-		<tr>
+		<tr class="home">
 
 			<th>
 				@*@Html.DisplayNameFor(model => model.Title)*@
@@ -27,7 +30,8 @@
 	<tbody>
 		@foreach (var item in Model)
 		{
-			<tr>
+			//sortable functionality
+			<tr id="id_@item.Id" class="@item.Slug">
 				@*<td>
 					@Html.DisplayFor(modelItem => item.Id)
 					</td>*@
@@ -61,3 +65,19 @@
 		}
 	</tbody>
 </table>
+
+@section Scripts{
+	<script>
+		$("table#pages tbody").sortable({
+			items: "tr:not(.home)",
+			placeholder: "ui-state-highlight",
+			update: function(){
+				let ids = $("table#pages tbody").sortable("serialize");
+				let url="/admin/pages/Reorder";
+
+				$.post(url,ids, function(){ });
+			}
+		});
+	</script>
+
+}

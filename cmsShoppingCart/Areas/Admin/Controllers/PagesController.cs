@@ -45,30 +45,7 @@ namespace cmsShoppingCart.Areas.Admin.Controllers
 
 
 		//POST admin/pages/create
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<ActionResult> Create(Page page)
-		{
-			if(ModelState.IsValid)
-			{
-				page.Slug = page.Title.ToLower().Replace(" ", "-");
-				page.Sorting = 100;
-
-				var slug = context.Pages.FirstOrDefault(x => x.Slug == page.Slug);
-				if(slug != null)
-				{
-					ModelState.AddModelError("", "The page is already exists.");
-					return View(page);
-				}
-				context.Add(page);
-				await context.SaveChangesAsync();
-
-				TempData["Success"] = "The page has been added!";
-
-				return RedirectToAction("Index");
-			}
-			return View(page);
-		}
+		 
 
 		//GET admin/pages/edit/5
 		public async Task<ActionResult> Edit(int id)
@@ -122,6 +99,24 @@ namespace cmsShoppingCart.Areas.Admin.Controllers
 				TempData["Success"] = "The page has been deleted!";
 			}
 			return RedirectToAction("Index");
+		}
+
+		//POST admin/pages/reorder
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<ActionResult> Reorder(int[] id)
+		{
+			int count = 1;
+			
+			foreach(var pageId in id)
+			{
+				Page page = await context.Pages.FindAsync(pageId);
+				page.Sorting = count;
+				context.Update(page);
+				await context.SaveChangesAsync();
+				count++;
+			}
+			return Ok();
 		}
 	}
 }
