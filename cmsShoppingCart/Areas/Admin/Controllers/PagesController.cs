@@ -45,7 +45,31 @@ namespace cmsShoppingCart.Areas.Admin.Controllers
 
 
 		//POST admin/pages/create
-		 
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<ActionResult> Create(Page page)
+		{
+			if (ModelState.IsValid)
+			{
+				page.Slug = page.Title.ToLower().Replace(" ", "-");
+				page.Sorting = 100;
+
+				var slug = context.Pages.FirstOrDefault(x => x.Slug == page.Slug);
+				if (slug != null)
+				{
+					ModelState.AddModelError("", "The category is already exists.");
+					return View(page);
+				}
+				context.Add(page);
+				await context.SaveChangesAsync();
+
+				TempData["Success"] = "The category has been added!";
+
+				return RedirectToAction("Index");
+			}
+			return View(page);
+		}
+
 
 		//GET admin/pages/edit/5
 		public async Task<ActionResult> Edit(int id)

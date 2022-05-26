@@ -156,3 +156,5 @@ C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor
 C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Create.cshtml.g.cs
 C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Details.cshtml.g.cs
 C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Categories\Edit.cshtml.g.cs
+C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Products\Index.cshtml.g.cs
+C:\Users\636\source\repos\CmsShoppingCart\cmsShoppingCart\obj\Debug\net5.0\Razor\Areas\Admin\Views\Products\Create.cshtml.g.cs
